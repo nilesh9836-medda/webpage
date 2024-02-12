@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <form id="survey-form" action="https://www.freecodecamp.org">
+    <label id="name-label">Name</label>
+    <p><input id="name" type="text" placeholder="Enter your name" required /></p>
+    <label id="email-label">Email</label>
+    <p><input id="email" type="email" placeholder="Enter your email id" required /></p>
+    <label id="number-label">Age</label>
+    <p><input id="number" type="number" placeholder="Enter your age."  max="2" min="1" required></p>
+    <p>Your occupation</p>
+    <select id="dropdown">
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+      <option value="employee">Employee</option>
+      <option value="doctor">Doctor</option>
+      <option value="labour">Labour</option>
+      <option value="other">Other</option>
+    </select>
+    <p>Would you recommend this form to your friends?<br>
+      <input type="radio" name="recommend" value="definitely" checked />Definitely
+      <input type="radio" name="recommend" value="maybe" />Maybe
+      <input type="radio" name="recommend" value="notsure" />Not sure
+    </p>
+    <p>Social media you use<br>
+      <input type="checkbox" value="facebook" />Facebook
+      <input type="checkbox" value="youtube" />Youtube
+      <input type="checkbox" value="whatsapp">WhatsApp
+      <input type="checkbox" value="insta">Instagram
+      <input type="checkbox" value="tiktok">TikTok
+      <input type="checkbox" value="snapchat">Snapchat
+      <input type="checkbox" value="telegram">Telegram
+    </p>
+    <p>Any comments or suggestions?<br>
+      <textarea name="comments" cols="30" raws="4">Enter your comments....</textarea>
+    </p>
+    <button id="submit">Submit</button>
+
+
+  </body>
+</html>
