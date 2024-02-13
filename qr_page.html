@@ -16,13 +16,23 @@
     <script>
         Quagga.init({
             inputStream: {
-                name: "Live",
-                type: "LiveStream",
-                target: document.querySelector("#interactive"),
+                type : "LiveStream",
+                constraints: {
+                    width: 640,
+                    height: 480,
+                    facingMode: "environment" // or "user" for front camera
+                }
             },
             decoder: {
                 readers: ["code_128_reader", "ean_reader", "ean_8_reader", "qrcode_reader"],
             },
+        }, function(err) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            console.log("Initialization finished. Starting Quagga...");
+            Quagga.start();
         });
 
         Quagga.onDetected((result) => {
@@ -35,8 +45,6 @@
                 alert(`Scanned ${result.codeResult.format}: ${result.codeResult.code}`);
             }
         });
-
-        Quagga.start();
 
         function isValidURL(url) {
             // Basic URL validation logic (you may need to adjust this based on your requirements)
