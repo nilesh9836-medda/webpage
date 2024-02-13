@@ -1,4 +1,11 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code and Barcode Scanner</title>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+    <script>
     // Wait for the DOM content to load before initializing QuaggaJS
     document.addEventListener("DOMContentLoaded", function() {
         // Initialize QuaggaJS
@@ -40,3 +47,15 @@
         }
     });
 </script>
+
+</head>
+<body>
+    <h1>QR Code and Barcode Scanner</h1>
+    <div id="interactive" class="viewport">
+        <video autoplay="true" muted="true" playsinline="true"></video>
+    </div>
+    <div id="result"></div>
+
+    
+</body>
+</html>
