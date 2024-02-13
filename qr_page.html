@@ -3,34 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
+    <title>QR Code and Barcode Scanner</title>
     <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            Quagga.init({
-                inputStream: {
-                    name: "Live",
-                    type: "LiveStream",
-                    target: document.querySelector("#interactive"),
-                },
-                decoder: {
-                    readers: ["code_128_reader", "ean_reader", "ean_8_reader"],
-                },
-            });
-
-            Quagga.onDetected((result) => {
-                const code = result.codeResult.code;
-                document.getElementById("result").innerText = code;
-            });
-
-            Quagga.start();
-        });
-    </script>
 </head>
 <body>
+    <h1>QR Code and Barcode Scanner</h1>
     <div id="interactive" class="viewport">
         <video autoplay="true" muted="true" playsinline="true"></video>
     </div>
     <div id="result"></div>
+
+    <script>
+        Quagga.init({
+            inputStream: {
+                name: "Live",
+                type: "LiveStream",
+                target: document.querySelector("#interactive"),
+            },
+            decoder: {
+                readers: ["code_128_reader", "ean_reader", "ean_8_reader", "qrcode_reader"],
+            },
+        });
+
+        Quagga.onDetected((result) => {
+            const code = result.codeResult.code;
+            document.getElementById("result").innerText = `Scanned: ${code}`;
+
+            if (isValidURL(code)) {
+                window.location.href = code; // Redirect to the URL scanned from the QR code
+            } else {
+                alert(`Scanned ${result.codeResult.format}: ${result.codeResult.code}`);
+            }
+        });
+
+        Quagga.start();
+
+        function isValidURL(url) {
+            // Basic URL validation logic (you may need to adjust this based on your requirements)
+            const pattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+            return pattern.test(url);
+        }
+    </script>
 </body>
 </html>
