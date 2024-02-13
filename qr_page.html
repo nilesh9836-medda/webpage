@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code and Barcode Scanner</title>
     <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</head>
+<body>
+    <h1>QR Code and Barcode Scanner</h1>
+    <div id="interactive" class="viewport">
+        <video autoplay="true" muted="true" playsinline="true"></video>
+    </div>
+    <div id="result"></div>
+
     <script>
-    // Wait for the DOM content to load before initializing QuaggaJS
-    document.addEventListener("DOMContentLoaded", function() {
-        // Initialize QuaggaJS
         Quagga.init({
             inputStream: {
                 name: "Live",
@@ -27,35 +32,10 @@
             Quagga.start();
         });
 
-        // Add event listener for detected codes
         Quagga.onDetected((result) => {
             const code = result.codeResult.code;
             document.getElementById("result").innerText = `Scanned: ${code}`;
-
-            if (isValidURL(code)) {
-                window.location.href = code; // Redirect to the URL scanned from the QR code
-            } else {
-                alert(`Scanned ${result.codeResult.format}: ${result.codeResult.code}`);
-            }
         });
-
-        // Function to check if the scanned content is a valid URL
-        function isValidURL(url) {
-            // Basic URL validation logic (you may need to adjust this based on your requirements)
-            const pattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-            return pattern.test(url);
-        }
-    });
-</script>
-
-</head>
-<body>
-    <h1>QR Code and Barcode Scanner</h1>
-    <div id="interactive" class="viewport">
-        <video autoplay="true" muted="true" playsinline="true"></video>
-    </div>
-    <div id="result"></div>
-
-    
+    </script>
 </body>
 </html>
