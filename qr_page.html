@@ -14,28 +14,25 @@
     <div id="result"></div>
 
     <script>
-        Quagga.init({
-            inputStream: {
-                name: "Live",
-                type: "LiveStream",
-                target: document.querySelector("#interactive"),
-            },
-            decoder: {
-                readers: ["code_128_reader", "ean_reader", "ean_8_reader", "qrcode_reader"],
-            },
-        }, function(err) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            console.log("Initialization finished. Starting Quagga...");
-            Quagga.start();
-        });
+        
+Quagga.init({
+    inputStream : {
+      name : "Live",
+      type : "LiveStream",
+      target: document.querySelector('#yourElement')    // Or '#yourElement' (optional)
+    },
+    decoder : {
+      readers : ["code_128_reader"]
+    }
+  }, function(err) {
+      if (err) {
+          console.log(err);
+          return
+      }
+      console.log("Initialization finished. Ready to start");
+      Quagga.start();
+  });
 
-        Quagga.onDetected((result) => {
-            const code = result.codeResult.code;
-            document.getElementById("result").innerText = `Scanned: ${code}`;
-        });
     </script>
 </body>
 </html>
