@@ -1,0 +1,18 @@
+/* CSS for code block styling */
+pre {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-x: auto; /* Enable horizontal scrollbar if needed */
+	width: 500px;
+	
+
+}
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    color: #333;
+	
+}

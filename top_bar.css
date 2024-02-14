@@ -1,0 +1,29 @@
+.top_bar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	height: 40px;
+	padding:  3px;	
+	margin:  auto;	
+
+}
+
+.setting{
+	position: fixed; /* or absolute */
+	top: 6px; /* adjust top spacing */
+	right: 5px; /* adjust right spacing */
+	/* You can also use bottom and left properties for different positioning */
+	/* Additional styling */
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.setting:hover {
+	 background-color: #0056b3;
+}
