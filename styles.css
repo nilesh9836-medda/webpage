@@ -87,7 +87,7 @@ a{
 
 .topics{
 	
-	padding: 0;
+	padding-bottom: 25px;
 	
 	
 }
@@ -108,4 +108,19 @@ p{
 	background-color: red;
 	height: 25px;
 	margin: 2em;
+}
+
+hr {
+  height: 2px;
+  background-color: brown;
+  border-color: brown;
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+.social{
+	position: fixed;
+	padding-bottom: 10px;
 }
