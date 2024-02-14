@@ -4,6 +4,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Nilesh's Blog</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 		<link rel="stylesheet" href="styles.css" />
 		<script src="scripts.js"></script>
 	</head>
@@ -32,6 +37,61 @@
 			<div class="btn android"><li><a href="" target="_blank">Android</a></li></div>
 			<div class="btn arduino"><li><a href="" target="_blank">Arduino</a></li></div>
 		</div>
-	
+		
+		
+		<footer>
+        <!-- Footer content of your website -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Please feel free to contact us using the form below:</p>
+            <form action="https://formspree.io/nileshmedda@gmail.com" method="POST">
+				  <label for="name">Name:</label>
+				  <input type="text" id="name" name="name" required>
+				  
+				  <label for="email">Email:</label>
+				  <input type="email" id="email" name="_replyto" required>
+				  
+				  <label for="message">Message:</label>
+				  <textarea id="message" name="message" required></textarea>
+				  
+				  <button type="submit">Send</button>
+			</form>
+        </section>
+
+        <section id="comments">
+            <h2>Comments</h2>
+            <!-- Disqus comment section -->
+            <div id="disqus_thread"></div>
+			<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = 'https://nileshmedda.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
+		
+		<!-- Social media icons -->
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=100089874579394" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/Nilesh9836" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/nilesh-medda-a85a10271" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    
+    </footer>
+		
+	<script id="dsq-count-scr" src="//nileshmedda.disqus.com/count.js" async></script>	
 	</body>
 </html>
