@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>C Program</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<link rel="stylesheet" href="content.css" />
+		<link rel="stylesheet" href="top_bar.css" />
+		<link rel="stylesheet" href="code_block.css"> <!-- Link to external CSS file for styling -->
+		<style>
+			body {
+			  /*background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);*/
+			  background-image: url(c1.png);
+			  font-family: sans-serif;
+			  padding: 20px;
+			}
+			hr {
+			  height: 2px;
+			  background-color: brown;
+			  border-color: brown;
+			}
+
+			.bottom-line {
+			  margin-top: 25px;
+			}
+			a{
+				color:#dfdfe2;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div class="top_bar">
+			<button class="setting" >
+				<a href="index.html">Home</a>
+			</button>
+		</div>
+		
+		<div class= "content">
+			
+			<center><u><h1>Welcome to C Program</h1></u></center>
+			
+			<main><section>
+				
+				<ol>
+				
+					<article><li><h4><u>Print 'Hello World' :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+  printf("Hello World");
+  return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Data types & how to print them :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+
+	int a=1;
+	float b=1.54;
+	char c='A';
+	long int d=123456789123456;
+	double e=0.123456789123;
+	
+	printf("a=%d\nb=%f\nc=%c\nd=%ld\ne=%lf\n",a,b,c,d,e);   //Here '\n' is used for new line
+	return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>How to take Input :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+	int a,b;
+	printf("\nEnter two numbers: ");
+	scanf("%d%d", &a, &b);
+	printf("\na=%d and b=%d\n",a,b);
+	return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Doing Simple Math :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+	int a,b,sm,sb,ml,dv;
+	printf("Enter two numbers to do simple math:");
+	scanf("%d%d", &a, &b);
+	sm=a+b;
+	sb=a-b;
+	ml=a*b;
+	dv=a/b;
+	printf("addition=%d\nsubtraction=%d\nmultiplication=%d\ndivision=%d\n",sm,sb,ml,dv);
+	return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Swapping Using 3rd Variable :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+	int a,b,temp;
+	printf("Enter two numbers for swapping");
+	printf("\nA= ");
+	scanf("%d", &a);
+	printf("\nB= ");
+	scanf("%d", &b);
+	temp=a;
+	a=b;
+	b=temp;
+	printf("\nAfter swapping A=%d and B=%d\n",a,b);
+	return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Swapping Without Using 3rd Variable</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+	int a,b;
+	printf("Enter number for A and B: ");
+	scanf("%d%d", &a, &b);
+	a=a+b;
+	b=a-b;
+	a=a-b;
+	printf("\nAfter swapping A=%d and b=%d\n",a,b);
+	return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Temperature Fahrenheit to Celsius Convertion</u></h4>
+				
+						<pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    float fahrenheit, celsius;
+
+    // Input temperature in Fahrenheit
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+    // Convert Fahrenheit to Celsius
+    celsius = (5.0 / 9.0) * (fahrenheit - 32.0);
+
+    // Output temperature in Celsius
+    printf("Temperature in Celsius: %.2f\n", celsius);
+
+    return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Calculate No. of Years and Weeks From Total No. of Days :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+	int n,y,w,d;
+	printf("Enter number of days: ");
+	scanf("%d", &n);
+	y=n/365;
+	w=(n%365)/7;
+	d=(n%365)%7;
+	printf("%d = %d years, %d weeks, %d days\n",n,y,w,d);
+}
+						</code></pre>
+
+					</li></article>
+					
+					<article><li><h4><u>Calculate Gross Salary :</u></h4>
+				
+						<pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int main(){
+	float bp,da,hra,gs,pf;
+	printf("Enter Basic pay: ");
+	scanf("%f", &bp);
+
+	hra=0.2*bp;
+	da=0.4*bp;
+	pf=0.12*bp;
+	gs=bp+da+hra+pf;
+
+	printf("Basic Pay = %.2f\n",bp);
+	printf("Dearness Allowance = %.2f\n",da);
+	printf("House Rent Allowance = %.2f\n", hra);
+	printf("Provident Fund = %.2f\n", pf);
+	printf("Gross Salary = %.2f\n", gs);
+
+	return 0;
+}
+						</code></pre>
+
+					</li></article>
+					
+					
+					
+					<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script> <!-- Prism.js for syntax highlighting -->
+					<script src="code_block.js"></script>
+					
+				</ol>
+				
+			
+			</section></main>
+			
+		</div>
+		
+		<hr class="bottom-line">
+		
+		<footer>
+		
+			 <!-- Footer content of your website -->
+        <!--<section id="contact">
+            <h2>Contact Us</h2>
+            <p>Please feel free to contact us using the form below:</p>
+            <!-- modify this form HTML and place wherever you want your form -->
+			<!--<form
+			  action="https://formspree.io/f/mrgnqblw"
+			  method="POST"
+			>
+			  <label>
+				Your email:
+				<input type="email" name="email">
+			  </label>
+			  <label>
+				Your message:
+				<textarea name="message"></textarea>
+			  </label>
+			  <!-- your other form fields go here -->
+			 <!-- <button type="submit">Send</button>
+			</form> 
+        </section> -->
+
+        <section id="comments">
+            <h2>Comments</h2>
+            <!-- Disqus comment section -->
+            <div id="disqus_thread"></div>
+			<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = 'https://nileshmedda.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
+		
+		<!-- Social media icons -->
+        <div class="social" align="center">
+            <a href="https://www.facebook.com/profile.php?id=100089874579394" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/Nilesh9836" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/nilesh-medda-a85a10271" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    
+		
+		</footer>
+		
+	</body>
+</html>
